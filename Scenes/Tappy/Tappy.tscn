@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dc8dfuvkeyvxl"]
 
 [ext_resource type="Texture2D" uid="uid://cl3igxa88c3v0" path="res://assets/items/frog.png" id="1_880gl"]
-[ext_resource type="Script" uid="uid://c6c6eg025scqh" path="res://assets/Scenes/Tappy/Tappy.gd" id="1_gqtue"]
+[ext_resource type="Script" uid="uid://c6c6eg025scqh" path="res://Scenes/Tappy/Tappy.gd" id="1_gqtue"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gqtue"]
 atlas = ExtResource("1_880gl")
@@ -363,3 +363,9 @@ frame_progress = 0.35270473
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=519296819]
 position = Vector2(318, 223)
 shape = SubResource("CircleShape2D_4qxb7")
+
+[node name="Label" type="Label" parent="." unique_id=2000119798]
+offset_left = 292.0
+offset_top = 130.0
+offset_right = 351.0
+offset_bottom = 153.0
