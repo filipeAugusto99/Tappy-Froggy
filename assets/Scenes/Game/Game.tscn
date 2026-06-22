@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ckvjtakbdqwfr"]
+
+[ext_resource type="Texture2D" uid="uid://bb0us425t8ur1" path="res://assets/background/Parallax0.png" id="1_ggiou"]
+[ext_resource type="PackedScene" uid="uid://dc8dfuvkeyvxl" path="res://assets/Scenes/Tappy/Tappy.tscn" id="2_xgrm0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xgrm0"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_olsdj"]
+
+[node name="Game" type="Node2D" unique_id=1591956303]
+
+[node name="Parallax0" type="Sprite2D" parent="." unique_id=634078885]
+position = Vector2(233, 810)
+texture = ExtResource("1_ggiou")
+
+[node name="Tappy" parent="." unique_id=232933908 instance=ExtResource("2_xgrm0")]
+position = Vector2(-151, 156)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=211315317]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=709197579]
+position = Vector2(233, -16)
+shape = SubResource("WorldBoundaryShape2D_xgrm0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=896853048]
+position = Vector2(235, 825)
+shape = SubResource("WorldBoundaryShape2D_olsdj")
