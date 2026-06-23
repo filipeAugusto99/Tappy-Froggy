@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bb0us425t8ur1" path="res://assets/background/Parallax0.png" id="1_ggiou"]
 [ext_resource type="PackedScene" uid="uid://dc8dfuvkeyvxl" path="res://Scenes/Tappy/Tappy.tscn" id="2_xgrm0"]
+[ext_resource type="PackedScene" uid="uid://c8abas45a1tbo" path="res://Scenes/Pipe/Pipes.tscn" id="3_xbxml"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xgrm0"]
 normal = Vector2(0, 1)
@@ -12,7 +13,8 @@ distance = 81.0
 [node name="Game" type="Node2D" unique_id=1591956303]
 
 [node name="Parallax0" type="Sprite2D" parent="." unique_id=634078885]
-position = Vector2(233, 810)
+z_index = 10
+position = Vector2(235, 810)
 texture = ExtResource("1_ggiou")
 
 [node name="Tappy" parent="." unique_id=232933908 instance=ExtResource("2_xgrm0")]
@@ -27,3 +29,6 @@ shape = SubResource("WorldBoundaryShape2D_xgrm0")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=896853048]
 position = Vector2(235, 825)
 shape = SubResource("WorldBoundaryShape2D_olsdj")
+
+[node name="Pipes" parent="." unique_id=696537717 instance=ExtResource("3_xbxml")]
+position = Vector2(443, 223)
