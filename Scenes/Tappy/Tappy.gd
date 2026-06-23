@@ -3,7 +3,9 @@ extends CharacterBody2D
 
 const JUMP_FORCE = -350.0
 
-@onready var label: Label = $Label
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 # Get the gravity.
 var _gravity: float = ProjectSettings.get('physics/2d/default_gravity')
@@ -25,11 +27,9 @@ func _physics_process(delta: float) -> void:
 	if _jumped:
 		velocity.y = JUMP_FORCE
 		_jumped = false
+		animation_player.play("fly")
 	
 	# this method moves the CharacterBody while automatically handling collisions
 	# and sliding along walls and slopes.
 	move_and_slide()
 	
-	label.text = "is_on_floor:%s\n" % is_on_floor()
-	label.text += "is_on_wall:%s\n" % is_on_wall()
-	label.text += "is_on_ceiling:%s" % is_on_ceiling()

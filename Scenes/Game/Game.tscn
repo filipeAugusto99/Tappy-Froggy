@@ -5,7 +5,7 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xgrm0"]
 normal = Vector2(0, 1)
-distance = 126.0
+distance = 81.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_olsdj"]
 
@@ -16,12 +16,12 @@ position = Vector2(233, 810)
 texture = ExtResource("1_ggiou")
 
 [node name="Tappy" parent="." unique_id=232933908 instance=ExtResource("2_xgrm0")]
-position = Vector2(-151, 156)
+position = Vector2(203, 267)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=211315317]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=709197579]
-position = Vector2(233, -16)
+position = Vector2(215, -133)
 shape = SubResource("WorldBoundaryShape2D_xgrm0")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=896853048]
