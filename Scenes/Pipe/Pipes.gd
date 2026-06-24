@@ -1,3 +1,6 @@
+class_name Pipes
+
+
 extends Node2D
 
 
