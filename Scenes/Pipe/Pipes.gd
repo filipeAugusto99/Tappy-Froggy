@@ -27,3 +27,14 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 # Sometimes the signal _screen_exited doesn't work well, for ensure this, we create a timer
 func _on_timer_timeout() -> void:
 	queue_free()
+
+
+func _on_pipe_body_entered(body: Node2D) -> void:
+	#print("_on_pipe_body_entered: %s %s" % [
+		#name, body.name
+	#])
+	pass
+
+
+func _on_laser_body_entered(body: Node2D) -> void:
+	print("point!")

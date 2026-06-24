@@ -6,6 +6,8 @@
 size = Vector2(11.249999, 495.8333)
 
 [node name="Pipe" type="Area2D" unique_id=1834887167]
+collision_layer = 0
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=197403434]
 position = Vector2(0, 300)

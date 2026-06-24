@@ -24,6 +24,7 @@ texture = ExtResource("1_ggiou")
 position = Vector2(203, 267)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=211315317]
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=709197579]
 position = Vector2(215, -133)
