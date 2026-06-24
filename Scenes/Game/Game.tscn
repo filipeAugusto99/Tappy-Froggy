@@ -32,3 +32,12 @@ shape = SubResource("WorldBoundaryShape2D_olsdj")
 
 [node name="Pipes" parent="." unique_id=696537717 instance=ExtResource("3_xbxml")]
 position = Vector2(443, 223)
+
+[node name="Pipes2" parent="." unique_id=2025288818 instance=ExtResource("3_xbxml")]
+position = Vector2(359, 304)
+
+[node name="Pipes3" parent="." unique_id=1615103553 instance=ExtResource("3_xbxml")]
+position = Vector2(640, 254)
+
+[node name="Pipes4" parent="." unique_id=248631214 instance=ExtResource("3_xbxml")]
+position = Vector2(544, 380)
