@@ -16,7 +16,6 @@ func _physics_process(delta: float) -> void:
 # This function ensures that the object pipes leave the game for not consume more memory
 func die() -> void:
 	queue_free()
-	print("Pipe dies")
 
 
 # When the pipes exit the screen, emit this signal and the pipes "die"
@@ -30,10 +29,8 @@ func _on_timer_timeout() -> void:
 
 
 func _on_pipe_body_entered(body: Node2D) -> void:
-	#print("_on_pipe_body_entered: %s %s" % [
-		#name, body.name
-	#])
-	pass
+	if body is Froggy:
+		body.die()
 
 
 func _on_laser_body_entered(body: Node2D) -> void:

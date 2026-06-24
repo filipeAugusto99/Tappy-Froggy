@@ -36,3 +36,11 @@ func _physics_process(delta: float) -> void:
 	# and sliding along walls and slopes.
 	move_and_slide()
 	
+	if is_on_floor():
+		die()
+	
+	if is_on_ceiling():
+		die()
+
+func die() -> void:
+	get_tree().paused = true
