@@ -25,7 +25,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	
 # Sometimes the signal _screen_exited doesn't work well, for ensure this, we create a timer
 func _on_timer_timeout() -> void:
-	queue_free()
+	die()
 
 
 func _on_pipe_body_entered(body: Node2D) -> void:

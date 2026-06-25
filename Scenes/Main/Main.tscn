@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://d2iratgijia74"]
+
+[ext_resource type="Texture2D" uid="uid://cmsn3n63y7uu2" path="res://assets/background/MainScreen.png" id="1_p8rbg"]
+[ext_resource type="LabelSettings" uid="uid://wy8ei060vegi" path="res://Scenes/Resources/title_label_red.tres" id="2_qtv3y"]
+[ext_resource type="LabelSettings" uid="uid://dagqji8r1daym" path="res://Scenes/Resources/highscore_label_red.tres" id="3_cmk6n"]
+[ext_resource type="FontFile" uid="uid://djq1lymmkodwr" path="res://assets/fonts/TitanOne-Regular.ttf" id="4_i3fi7"]
+[ext_resource type="AudioStream" uid="uid://dlprynny34qqo" path="res://assets/audio/bgm_menu.mp3" id="5_o8wgc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o8wgc"]
+font = ExtResource("4_i3fi7")
+font_size = 54
+font_color = Color(0.9254902, 1, 1, 1)
+outline_size = 10
+outline_color = Color(0.3529412, 0.40784314, 1, 1)
+shadow_size = 9
+shadow_color = Color(0.3529412, 0.40784314, 1, 1)
+
+[sub_resource type="Animation" id="Animation_o8wgc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w20t6"]
+resource_name = "flash"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.53333336, 0.73333335, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aw1lf"]
+_data = {
+&"RESET": SubResource("Animation_o8wgc"),
+&"flash": SubResource("Animation_w20t6")
+}
+
+[node name="Main" type="Control" unique_id=2120267692]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=81191078]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p8rbg")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1057864689]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 72
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="TappyLabel" type="Label" parent="MarginContainer" unique_id=1469338534]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Tappy"
+label_settings = ExtResource("2_qtv3y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighscoreTextLabel" type="Label" parent="MarginContainer" unique_id=1533245904]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Highscore"
+label_settings = ExtResource("3_cmk6n")
+
+[node name="HighscoreLabel" type="Label" parent="MarginContainer" unique_id=984562928]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "000"
+label_settings = ExtResource("3_cmk6n")
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1423303579]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PRESS SPACE"
+label_settings = SubResource("LabelSettings_o8wgc")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1399786624]
+stream = ExtResource("5_o8wgc")
+volume_db = -12.0
+autoplay = true
+parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1445650104]
+libraries/ = SubResource("AnimationLibrary_aw1lf")
+autoplay = &"flash"
