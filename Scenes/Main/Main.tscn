@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2iratgijia74"]
 
 [ext_resource type="Texture2D" uid="uid://cmsn3n63y7uu2" path="res://assets/background/MainScreen.png" id="1_p8rbg"]
+[ext_resource type="Script" uid="uid://l32mys4celhy" path="res://Scenes/Main/Main.gd" id="1_w20t6"]
 [ext_resource type="LabelSettings" uid="uid://wy8ei060vegi" path="res://Scenes/Resources/title_label_red.tres" id="2_qtv3y"]
 [ext_resource type="LabelSettings" uid="uid://dagqji8r1daym" path="res://Scenes/Resources/highscore_label_red.tres" id="3_cmk6n"]
 [ext_resource type="FontFile" uid="uid://djq1lymmkodwr" path="res://assets/fonts/TitanOne-Regular.ttf" id="4_i3fi7"]
@@ -59,6 +60,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_w20t6")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=81191078]
 layout_mode = 1

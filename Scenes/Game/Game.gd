@@ -8,9 +8,19 @@ extends Node2D
 @onready var lower_spawn: Marker2D = $LowerSpawn
 
 
+var MAIN = load("uid://d2iratgijia74")
+
+
 func _ready() -> void:
 	spawn_pipes()
 	
+
+func _unhandled_input(event: InputEvent) -> void:
+		# Checks if the player pressed the "exit" action.
+	if event.is_action_pressed("exit"):
+		# Changes to the loaded main scene.
+		get_tree().change_scene_to_packed(MAIN)
+
 
 # This function spawn the pipes into a range of upper_spawn and lower_spawn
 func spawn_pipes() -> void:
