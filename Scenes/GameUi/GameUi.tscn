@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dml3x4b4nu3wq"]
+
+[ext_resource type="Script" uid="uid://m7bbd21gfaxi" path="res://Scenes/GameUi/GameUi.gd" id="1_anolp"]
+[ext_resource type="LabelSettings" uid="uid://dagqji8r1daym" path="res://Resources/highscore_label_red.tres" id="1_mb7aw"]
+[ext_resource type="LabelSettings" uid="uid://c3m6lxidnhs4h" path="res://Resources/press_space_label.tres" id="2_anb74"]
+
+[node name="GameUi" type="Control" unique_id=1510164447]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_anolp")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=68137742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer" unique_id=1202506195]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0000"
+label_settings = ExtResource("1_mb7aw")
+
+[node name="GameOverLabel" type="Label" parent="MarginContainer" unique_id=1614193644]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Over"
+label_settings = ExtResource("2_anb74")

@@ -43,4 +43,5 @@ func _physics_process(delta: float) -> void:
 		die()
 
 func die() -> void:
+	SignalHub.emit_froggy_died()
 	get_tree().paused = true

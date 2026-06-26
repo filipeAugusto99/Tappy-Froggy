@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 
 @export var pipes_scene: PackedScene
@@ -6,18 +6,12 @@ extends Node2D
 
 @onready var upper_spawn: Marker2D = $UpperSpawn
 @onready var lower_spawn: Marker2D = $LowerSpawn
+@onready var pipes_holder: Node = $PipesHolder
 
 
 func _ready() -> void:
 	spawn_pipes()
 	
-
-func _unhandled_input(event: InputEvent) -> void:
-		# Checks if the player pressed the "exit" action.
-	if event.is_action_pressed("exit"):
-		# Changes to the loaded main scene.
-		GameManager.load_main_screen()
-
 
 # This function spawn the pipes into a range of upper_spawn and lower_spawn
 func spawn_pipes() -> void:
@@ -32,7 +26,7 @@ func spawn_pipes() -> void:
 	# create a vector type
 	new_pipe.position = Vector2(upper_spawn.position.x, pos_y)	
 	# create a new pipe
-	add_child(new_pipe)
+	pipes_holder.add_child(new_pipe)
 
 
 # call the function spawn_pipes every 1.2 seconds

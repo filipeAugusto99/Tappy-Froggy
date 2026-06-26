@@ -4,24 +4,15 @@
 [ext_resource type="Script" uid="uid://l32mys4celhy" path="res://Scenes/Main/Main.gd" id="1_w20t6"]
 [ext_resource type="LabelSettings" uid="uid://wy8ei060vegi" path="res://Resources/title_label_red.tres" id="2_qtv3y"]
 [ext_resource type="LabelSettings" uid="uid://dagqji8r1daym" path="res://Resources/highscore_label_red.tres" id="3_cmk6n"]
-[ext_resource type="FontFile" uid="uid://djq1lymmkodwr" path="res://assets/fonts/TitanOne-Regular.ttf" id="4_i3fi7"]
 [ext_resource type="AudioStream" uid="uid://dlprynny34qqo" path="res://assets/audio/bgm_menu.mp3" id="5_o8wgc"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_o8wgc"]
-font = ExtResource("4_i3fi7")
-font_size = 54
-font_color = Color(0.9254902, 1, 1, 1)
-outline_size = 10
-outline_color = Color(0.3529412, 0.40784314, 1, 1)
-shadow_size = 9
-shadow_color = Color(0.3529412, 0.40784314, 1, 1)
+[ext_resource type="LabelSettings" uid="uid://c3m6lxidnhs4h" path="res://Resources/press_space_label.tres" id="5_w20t6"]
 
 [sub_resource type="Animation" id="Animation_o8wgc"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/Label:self_modulate")
+tracks/0/path = NodePath("MarginContainer/PressSpaceLabel:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,7 +28,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/Label:self_modulate")
+tracks/0/path = NodePath("MarginContainer/PressSpaceLabel:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -106,11 +97,11 @@ size_flags_vertical = 8
 text = "000"
 label_settings = ExtResource("3_cmk6n")
 
-[node name="Label" type="Label" parent="MarginContainer" unique_id=1423303579]
+[node name="PressSpaceLabel" type="Label" parent="MarginContainer" unique_id=1423303579]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "PRESS SPACE"
-label_settings = SubResource("LabelSettings_o8wgc")
+label_settings = ExtResource("5_w20t6")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1399786624]
 stream = ExtResource("5_o8wgc")
