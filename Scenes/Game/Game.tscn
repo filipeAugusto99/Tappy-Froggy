@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bb0us425t8ur1" path="res://assets/background/Parallax0.png" id="1_ggiou"]
 [ext_resource type="Script" uid="uid://5g34m8xf1sn3" path="res://Scenes/Game/Game.gd" id="1_xbxml"]
 [ext_resource type="PackedScene" uid="uid://dc8dfuvkeyvxl" path="res://Scenes/Tappy/Tappy.tscn" id="2_xgrm0"]
+[ext_resource type="PackedScene" uid="uid://ds64u5cn3nt12" path="res://Scenes/ScrollingBg/ScrollingBg.tscn" id="3_3k6gv"]
 [ext_resource type="PackedScene" uid="uid://c8abas45a1tbo" path="res://Scenes/Pipe/Pipes.tscn" id="3_xbxml"]
 [ext_resource type="PackedScene" uid="uid://dml3x4b4nu3wq" path="res://Scenes/GameUi/GameUi.tscn" id="4_ln2h6"]
 
@@ -16,7 +17,10 @@ distance = 81.0
 script = ExtResource("1_xbxml")
 pipes_scene = ExtResource("3_xbxml")
 
+[node name="ScrollingBg" parent="." unique_id=2125163100 instance=ExtResource("3_3k6gv")]
+
 [node name="Parallax0" type="Sprite2D" parent="." unique_id=634078885]
+visible = false
 z_index = 10
 position = Vector2(235, 810)
 texture = ExtResource("1_ggiou")
@@ -32,7 +36,7 @@ position = Vector2(215, -133)
 shape = SubResource("WorldBoundaryShape2D_xgrm0")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=896853048]
-position = Vector2(235, 825)
+position = Vector2(235, 682)
 shape = SubResource("WorldBoundaryShape2D_olsdj")
 
 [node name="UpperSpawn" type="Marker2D" parent="." unique_id=1843288082]

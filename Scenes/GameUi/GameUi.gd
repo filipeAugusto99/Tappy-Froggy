@@ -1,9 +1,12 @@
 extends Control
 
+
 @onready var game_over_label: Label = $MarginContainer/GameOverLabel
 @onready var press_jump_label: Label = $MarginContainer/PressJumpLabel
 @onready var timer: Timer = $Timer
 @onready var sound: AudioStreamPlayer = $Sound
+@onready var score_label: Label = $MarginContainer/ScoreLabel
+
 
 var can_return_to_main: bool = false
 
@@ -17,10 +20,15 @@ func _unhandled_input(event: InputEvent) -> void:
 		GameManager.load_main_screen()
 
 func _ready() -> void:
-	SignalHub.froggy_died.connect(game_over)
+	SignalHub.froggy_died.connect(on_game_over)
+	SignalHub.point_scored.connect(on_point_scored)
+	on_point_scored(0)
+	
+func on_point_scored(score: int) -> void:
+	score_label.text = "%04d" % score
 
 
-func game_over() -> void:
+func on_game_over() -> void:
 	game_over_label.show()
 	sound.play()
 	timer.start()

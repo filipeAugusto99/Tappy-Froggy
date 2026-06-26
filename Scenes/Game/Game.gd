@@ -10,6 +10,7 @@ extends Node
 
 
 func _ready() -> void:
+	ScoreManager.reset_score()
 	spawn_pipes()
 	
 
