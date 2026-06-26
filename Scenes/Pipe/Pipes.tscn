@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://bwt3jwgdotf1d" path="res://Scenes/Pipe/Pipes.gd" id="1_6nvds"]
 [ext_resource type="PackedScene" uid="uid://cqhbm040d1ufg" path="res://Scenes/Pipe/Pipe.tscn" id="1_b0v6a"]
 [ext_resource type="PackedScene" uid="uid://6ohqkdyiuts2" path="res://Scenes/Laser/Laser.tscn" id="1_doa0s"]
-[ext_resource type="PackedScene" uid="uid://dc8dfuvkeyvxl" path="res://Scenes/Tappy/Tappy.tscn" id="2_faodf"]
+[ext_resource type="AudioStream" uid="uid://cvivd58q6l4hm" path="res://assets/audio/score.wav" id="4_faodf"]
 
 [node name="Pipes" type="Node2D" unique_id=696537717]
 script = ExtResource("1_6nvds")
-tappy_scene = ExtResource("2_faodf")
 
 [node name="Laser" parent="." unique_id=1589452172 instance=ExtResource("1_doa0s")]
 position = Vector2(-1, 19)
+script = null
 
 [node name="Upper" parent="." unique_id=1834887167 instance=ExtResource("1_b0v6a")]
 position = Vector2(0, -70)
@@ -27,6 +27,9 @@ rect = Rect2(-10, -10, 19, 20)
 wait_time = 15.0
 one_shot = true
 autostart = true
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="." unique_id=461198625]
+stream = ExtResource("4_faodf")
 
 [connection signal="body_entered" from="Laser" to="." method="_on_laser_body_entered" flags=6]
 [connection signal="body_entered" from="Upper" to="." method="_on_pipe_body_entered"]

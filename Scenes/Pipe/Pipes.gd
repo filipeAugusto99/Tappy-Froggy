@@ -7,6 +7,9 @@ extends Node2D
 const SCROLL_VELOCITY: float = 120.0
 
 
+@onready var score_sound: AudioStreamPlayer = $ScoreSound
+
+
 func _physics_process(delta: float) -> void:
 	# Scrolling the pipes
 	#move_local_x(delta * -SCROLL_VELOCITY) <- is possible too
@@ -34,4 +37,4 @@ func _on_pipe_body_entered(body: Node2D) -> void:
 
 
 func _on_laser_body_entered(body: Node2D) -> void:
-	print("point!")
+	score_sound.play()
