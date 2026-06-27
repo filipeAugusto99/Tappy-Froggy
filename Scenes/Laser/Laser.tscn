@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://6ohqkdyiuts2"]
 
 [ext_resource type="Texture2D" uid="uid://u0r71bhef7bi" path="res://assets/items/laser2.png" id="1_g6hyc"]
-[ext_resource type="Script" uid="uid://bhfxfifse1h3n" path="res://Scenes/Laser/Laser.gd" id="1_peav1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_led5x"]
 size = Vector2(4.5, 188)
@@ -47,7 +46,6 @@ _data = {
 [node name="Laser" type="Area2D" unique_id=1589452172]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("1_peav1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1435756990]
 position = Vector2(1, -21)
