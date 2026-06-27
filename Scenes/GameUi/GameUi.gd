@@ -10,14 +10,15 @@ extends Control
 
 var can_return_to_main: bool = false
 
+
 func _unhandled_input(event: InputEvent) -> void:
 		# Checks if the player pressed the "exit" action.
 	if event.is_action_pressed("exit"):
 		# Changes to the loaded main scene.
-		GameManager.load_main_screen()
+		ComplexChange.load_main_screen()
 
 	if  can_return_to_main and event.is_action_pressed("jump"):
-		GameManager.load_main_screen()
+		ComplexChange.load_main_screen()
 
 func _ready() -> void:
 	SignalHub.froggy_died.connect(on_game_over)

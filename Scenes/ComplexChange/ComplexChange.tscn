@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://d10r2swl4cpsx"]
+
+[ext_resource type="Script" uid="uid://ce3x7ktsqof3r" path="res://Scenes/ComplexChange/ComplexChange.gd" id="1_dyp6t"]
+[ext_resource type="PackedScene" uid="uid://ckvjtakbdqwfr" path="res://Scenes/Game/Game.tscn" id="2_r88qf"]
+[ext_resource type="PackedScene" uid="uid://d2iratgijia74" path="res://Scenes/Main/Main.tscn" id="3_3nfh5"]
+
+[sub_resource type="Animation" id="Animation_ci5xe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dyp6t"]
+resource_name = "fade"
+length = 0.39999999999999997
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099971116, 0.3007678, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_to_next"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uyqes"]
+_data = {
+&"RESET": SubResource("Animation_ci5xe"),
+&"fade": SubResource("Animation_dyp6t")
+}
+
+[node name="ComplexChange" type="CanvasLayer" unique_id=1309888238]
+process_mode = 3
+layer = 10
+script = ExtResource("1_dyp6t")
+game = ExtResource("2_r88qf")
+main = ExtResource("3_3nfh5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=923414488]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1998312567]
+libraries/ = SubResource("AnimationLibrary_uyqes")

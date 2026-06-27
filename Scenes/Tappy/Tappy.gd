@@ -42,6 +42,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_ceiling():
 		die()
 
+
 func die() -> void:
 	SignalHub.emit_froggy_died()
 	get_tree().paused = true

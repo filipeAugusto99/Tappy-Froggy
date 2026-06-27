@@ -10,14 +10,13 @@ script = ExtResource("1_6nvds")
 
 [node name="Laser" parent="." unique_id=1589452172 instance=ExtResource("1_doa0s")]
 position = Vector2(-1, 19)
-script = null
 
 [node name="Upper" parent="." unique_id=1834887167 instance=ExtResource("1_b0v6a")]
-position = Vector2(0, -70)
+position = Vector2(0, -60)
 rotation = 3.1415927
 
 [node name="Lower" parent="." unique_id=36756539 instance=ExtResource("1_b0v6a")]
-position = Vector2(0, 70)
+position = Vector2(0, 60)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=525746315]
 position = Vector2(79, -1)
